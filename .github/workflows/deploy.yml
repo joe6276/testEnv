@@ -2,11 +2,14 @@ name: Deployment
 on:
   push:
     branches:
-      - main
-      - dev
+      - master
+
+env:
+  NAME: johnDoe
+
 jobs:
   test:
-    environment: testing
+    
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -30,4 +33,4 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "..."
+          echo "The Name is $NAME"
